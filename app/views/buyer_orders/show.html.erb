@@ -20,7 +20,7 @@
 
 
     <div class="aguarde mt-3 table-2lines">
-      <div>
+      <div class="mt-1">
         Entre em contato com o vendedor.
       </div>
       <% if @order.first.chat.present? %>
@@ -34,7 +34,7 @@
         <div class="mt-2">
             <%= link_to buyer_order_chats_path(@order.first), class: "d-flex", method: :post do %>
               <i class="fas fa-comment-alt"></i>
-              <p class="ml-2 mt-1">MANDAR MENSAGEM</p>
+              <p class="ml-2">MANDAR MENSAGEM</p>
             <% end %>
         </div>
       <% end %>
@@ -47,7 +47,6 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
 <div class="container buttons my-3">
   <%= link_to "Avaliar vendedor", new_buyer_order_review_path(@order.first), class:'btn general' %>
 </div>
